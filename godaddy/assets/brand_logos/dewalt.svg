@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 80" width="100%" height="100%">
+  <rect width="240" height="80" rx="8" fill="#1E293B"/>
+  <text x="50%" y="42%" font-family="Arial, Helvetica, sans-serif" font-weight="900" font-size="38" fill="#FEB81C" text-anchor="middle" dominant-baseline="middle" letter-spacing="0.5">DEWALT</text>
+  <text x="50%" y="72%" font-family="Arial, sans-serif" font-weight="700" font-size="9" fill="#FEB81C" opacity="0.85" text-anchor="middle" dominant-baseline="middle" letter-spacing="2.5">GUARANTEED TOUGH</text>
+</svg>

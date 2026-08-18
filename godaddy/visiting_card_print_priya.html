@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>PRILOK Official Print-Ready Visiting Card - Priya</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  @page {
+    size: 85mm 55mm;
+    margin: 0;
+  }
+  
+  *, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background: #e2e8f0;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  @media print {
+    body {
+      background: #fff !important;
+      padding: 0 !important;
+      gap: 0 !important;
+    }
+    .card-page {
+      page-break-after: always !important;
+      page-break-inside: avoid !important;
+      box-shadow: none !important;
+      border: none !important;
+    }
+  }
+
+  .card-page {
+    width: 85mm;
+    height: 55mm;
+    min-width: 85mm;
+    max-width: 85mm;
+    min-height: 55mm;
+    max-height: 55mm;
+    position: relative;
+    overflow: hidden;
+    background: #ffffff;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+  }
+
+  /* ══════════════════════════════════════════════
+     FRONT FACE (COMMERCIAL CLEAN B2B DESIGN)
+     ══════════════════════════════════════════════ */
+  .card-front {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 5mm 6mm;
+    background: #ffffff;
+  }
+
+  /* Left Gold Accent Bar */
+  .front-accent-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 3.5mm;
+    background: linear-gradient(to bottom, #C9A84C 0%, #D9822B 100%);
+  }
+
+  /* Front Header */
+  .front-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 2mm;
+  }
+  .front-brand-left {
+    display: flex;
+    align-items: center;
+    gap: 2.5mm;
+  }
+  .brand-logo-img {
+    width: 8.5mm;
+    height: 8.5mm;
+    object-fit: contain;
+    border-radius: 1.5mm;
+    border: 0.8px solid #C9A84C;
+    padding: 0.5mm;
+    background: #fff;
+  }
+  .brand-text-block {
+    display: flex;
+    flex-direction: column;
+  }
+  .brand-main-title {
+    font-size: 4mm;
+    font-weight: 900;
+    letter-spacing: 0.5px;
+    line-height: 1;
+    color: #071828;
+  }
+  .brand-main-title span {
+    color: #D9822B;
+  }
+  .brand-sub-title {
+    font-size: 1.6mm;
+    font-weight: 800;
+    letter-spacing: 0.3px;
+    color: #5c7a96;
+    margin-top: 0.4mm;
+    text-transform: uppercase;
+  }
+  .license-badge {
+    font-size: 1.4mm;
+    font-weight: 800;
+    color: #071828;
+    background: #f1f5f9;
+    border: 0.5px solid #cbd5e1;
+    padding: 0.8mm 1.8mm;
+    border-radius: 1mm;
+    letter-spacing: 0.2px;
+  }
+
+  /* Front Middle (Executive Name) */
+  .front-middle {
+    padding-left: 2mm;
+    margin: auto 0;
+  }
+  .exec-name {
+    font-size: 4.6mm;
+    font-weight: 900;
+    color: #071828;
+    line-height: 1.1;
+    letter-spacing: -0.1px;
+  }
+  .exec-title {
+    font-size: 2.2mm;
+    font-weight: 700;
+    color: #D9822B;
+    margin-top: 0.5mm;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+  }
+  .exec-divider {
+    width: 25mm;
+    height: 0.6mm;
+    background: #C9A84C;
+    margin-top: 1.2mm;
+  }
+
+  /* Front Footer (Contact Details Matrix) */
+  .front-footer {
+    padding-left: 2mm;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.2mm 2mm;
+    border-top: 0.5px solid #e2e8f0;
+    padding-top: 2mm;
+  }
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 1.5mm;
+    font-size: 1.85mm;
+    color: #1e293b;
+    font-weight: 600;
+  }
+  .contact-icon {
+    font-size: 1.9mm;
+    color: #C9A84C;
+    font-weight: 800;
+    width: 2.5mm;
+    text-align: center;
+  }
+  .contact-val-bold {
+    font-weight: 800;
+    color: #071828;
+  }
+
+  /* ══════════════════════════════════════════════
+     BACK FACE (OFFICIAL CORPORATE & DIVISIONS)
+     ══════════════════════════════════════════════ */
+  .card-back {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 4.5mm 5.5mm;
+    background: #071828;
+    color: #ffffff;
+  }
+
+  .back-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 0.8px solid #C9A84C;
+    padding-bottom: 1.5mm;
+  }
+  .back-title {
+    font-size: 2.5mm;
+    font-weight: 900;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+  }
+  .back-title span {
+    color: #C9A84C;
+  }
+  .back-tagline {
+    font-size: 1.5mm;
+    font-weight: 800;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+  }
+
+  /* Supply Divisions Grid */
+  .back-divisions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.2mm 3mm;
+    margin: auto 0;
+  }
+  .div-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.2mm;
+    font-size: 1.6mm;
+    color: #cbd5e1;
+    line-height: 1.2;
+    font-weight: 600;
+  }
+  .div-bullet {
+    color: #C9A84C;
+    font-weight: 900;
+    font-size: 1.8mm;
+    line-height: 1;
+  }
+  .div-item strong {
+    color: #ffffff;
+    font-weight: 800;
+  }
+
+  /* Back Bottom Partner Logo Strip */
+  .back-partner-strip {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(255,255,255,0.06);
+    border: 0.5px solid rgba(201,168,76,0.3);
+    border-radius: 1mm;
+    padding: 1mm 2.5mm;
+  }
+  .partner-logo-item {
+    height: 3.2mm;
+    max-width: 8mm;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+    opacity: 0.85;
+  }
+  .back-web-url {
+    font-size: 1.7mm;
+    font-weight: 900;
+    color: #C9A84C;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+</style>
+</head>
+<body>
+
+<!-- ════════════════════════════════════════════════════════════════════════════
+     PAGE 1: FRONT SIDE (PRIYA - HEAD OF COMMERCIAL SALES)
+     ════════════════════════════════════════════════════════════════════════════ -->
+<div class="card-page card-front">
+  <div class="front-accent-bar"></div>
+
+  <!-- Header -->
+  <div class="front-header">
+    <div class="front-brand-left">
+      <img src="assets/prilok-logo.jpg" alt="PRILOK" class="brand-logo-img">
+      <div class="brand-text-block">
+        <div class="brand-main-title"><span>PRILOK</span> TRADING</div>
+        <div class="brand-sub-title">Building Materials Trading L.L.C.</div>
+      </div>
+    </div>
+    <div class="license-badge">
+      LIC: 1530948 &bull; DUBAI
+    </div>
+  </div>
+
+  <!-- Middle Executive Info -->
+  <div class="front-middle">
+    <div class="exec-name">Priya</div>
+    <div class="exec-title">Head of Commercial Sales</div>
+    <div class="exec-divider"></div>
+  </div>
+
+  <!-- Footer Contact Info -->
+  <div class="front-footer">
+    <div class="contact-item">
+      <span class="contact-icon">📞</span>
+      <span>Tel: +971 4 3444603</span>
+    </div>
+    <div class="contact-item">
+      <span class="contact-icon">📱</span>
+      <span class="contact-val-bold">+971 56 567 0169</span>
+    </div>
+    <div class="contact-item">
+      <span class="contact-icon">✉️</span>
+      <span>priya@prilok.com</span>
+    </div>
+    <div class="contact-item">
+      <span class="contact-icon">🌐</span>
+      <span class="contact-val-bold">www.prilok.com</span>
+    </div>
+    <div class="contact-item" style="grid-column: span 2;">
+      <span class="contact-icon">📍</span>
+      <span>P.O. Box 48512, Dubai, United Arab Emirates</span>
+    </div>
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════════════════════════════════════════════════
+     PAGE 2: BACK SIDE (CORE MATERIAL DIVISIONS & GLOBAL PARTNERS)
+     ════════════════════════════════════════════════════════════════════════════ -->
+<div class="card-page card-back">
+  <!-- Header -->
+  <div class="back-header">
+    <div class="back-title"><span>PRILOK</span> MATERIAL DIVISIONS</div>
+    <div class="back-tagline">Complete B2B Supply Spectrum</div>
+  </div>
+
+  <!-- Material Divisions Matrix -->
+  <div class="back-divisions">
+    <div class="div-item">
+      <span class="div-bullet">&bull;</span>
+      <div><strong>Civil &amp; Steel:</strong> Cement, Blocks, Rebar, Beams, GI &amp; MS Sheets</div>
+    </div>
+    <div class="div-item">
+      <span class="div-bullet">&bull;</span>
+      <div><strong>Pipes &amp; Fittings:</strong> GI, MS, Carbon, SS, HDPE, PPR, uPVC, Copper</div>
+    </div>
+    <div class="div-item">
+      <span class="div-bullet">&bull;</span>
+      <div><strong>Valves &amp; Controls:</strong> Gate, Ball, Globe, Butterfly, PRVs, Strainers</div>
+    </div>
+    <div class="div-item">
+      <span class="div-bullet">&bull;</span>
+      <div><strong>Flanges &amp; Fasteners:</strong> B16.5 Flanges, Gaskets, High-Tensile Bolts</div>
+    </div>
+    <div class="div-item">
+      <span class="div-bullet">&bull;</span>
+      <div><strong>Electrical &amp; HVAC:</strong> XLPE Cables, Conduits, GI Ducts, VCD Dampers</div>
+    </div>
+    <div class="div-item">
+      <span class="div-bullet">&bull;</span>
+      <div><strong>Fire, Safety &amp; Tools:</strong> UL/FM Valves, Sprinklers, Power Tools &amp; PPE</div>
+    </div>
+  </div>
+
+  <!-- Partner Logos & Domain -->
+  <div class="back-partner-strip">
+    <img src="assets/brand_logos/abb.svg" alt="ABB" class="partner-logo-item">
+    <img src="assets/brand_logos/schneider.svg" alt="Schneider" class="partner-logo-item">
+    <img src="assets/brand_logos/danfoss.svg" alt="Danfoss" class="partner-logo-item">
+    <img src="assets/brand_logos/ducab.svg" alt="Ducab" class="partner-logo-item">
+    <img src="assets/brand_logos/jotun.svg" alt="Jotun" class="partner-logo-item">
+    <img src="assets/brand_logos/grohe.svg" alt="Grohe" class="partner-logo-item">
+    <div class="back-web-url">WWW.PRILOK.COM</div>
+  </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>PRILOK - Official Tax Invoice Template</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  @page {
+    size: A4 portrait;
+    margin: 12mm 15mm;
+  }
+  
+  *, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background: #fff;
+    color: #1e293b;
+    font-size: 9pt;
+    line-height: 1.35;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .doc-container {
+    width: 100%;
+    max-width: 190mm;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 270mm;
+  }
+
+  /* ── LETTERHEAD ── */
+  .letterhead {
+    border-bottom: 2px solid #C9A84C;
+    padding-bottom: 4mm;
+    margin-bottom: 4mm;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .lh-left {
+    display: flex;
+    align-items: center;
+    gap: 3.5mm;
+  }
+  .lh-logo {
+    width: 14mm;
+    height: 14mm;
+    object-fit: contain;
+    border: 1px solid #C9A84C;
+    border-radius: 2mm;
+    padding: 1mm;
+    background: #fff;
+  }
+  .lh-brand-name {
+    font-size: 14pt;
+    font-weight: 900;
+    letter-spacing: 0.5px;
+    color: #071828;
+    line-height: 1.1;
+  }
+  .lh-brand-name span {
+    color: #D9822B;
+  }
+  .lh-brand-sub {
+    font-size: 7pt;
+    font-weight: 800;
+    color: #5c7a96;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-top: 0.5mm;
+  }
+  .lh-brand-lic {
+    font-size: 6.5pt;
+    font-weight: 700;
+    color: #071828;
+    background: #f1f5f9;
+    border: 0.5px solid #cbd5e1;
+    padding: 0.6mm 1.6mm;
+    border-radius: 1mm;
+    display: inline-block;
+    margin-top: 0.8mm;
+  }
+  .lh-right {
+    text-align: right;
+    font-size: 7.5pt;
+    color: #64748b;
+    line-height: 1.4;
+  }
+  .lh-right strong {
+    color: #071828;
+  }
+
+  /* ── TITLE BAR ── */
+  .doc-title-bar {
+    background: #071828;
+    color: #fff;
+    padding: 2.5mm 4mm;
+    border-radius: 1.5mm;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 4mm;
+  }
+  .doc-title-text {
+    font-size: 11pt;
+    font-weight: 900;
+    letter-spacing: 1px;
+    color: #C9A84C;
+  }
+  .doc-title-meta {
+    font-size: 7.5pt;
+    font-weight: 700;
+    color: #e2e8f0;
+  }
+
+  /* ── META INFO GRID ── */
+  .meta-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4mm;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 1.5mm;
+    padding: 3.5mm 4mm;
+    margin-bottom: 4mm;
+    font-size: 8pt;
+  }
+  .meta-col h4 {
+    font-size: 7pt;
+    font-weight: 800;
+    color: #C9A84C;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 1.5mm;
+    border-bottom: 0.5px solid #cbd5e1;
+    padding-bottom: 0.5mm;
+  }
+  .meta-row {
+    display: flex;
+    margin-bottom: 0.8mm;
+  }
+  .meta-label {
+    width: 26mm;
+    font-weight: 700;
+    color: #64748b;
+  }
+  .meta-val {
+    flex: 1;
+    font-weight: 700;
+    color: #071828;
+  }
+
+  /* ── ITEMS TABLE ── */
+  .items-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 4mm;
+    font-size: 8pt;
+  }
+  .items-table th {
+    background: #071828;
+    color: #C9A84C;
+    font-weight: 800;
+    font-size: 7.5pt;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 2.2mm 2.5mm;
+    border: 0.5px solid #071828;
+    text-align: left;
+  }
+  .items-table td {
+    padding: 2.2mm 2.5mm;
+    border: 0.5px solid #cbd5e1;
+    color: #1e293b;
+    vertical-align: top;
+  }
+  .items-table tbody tr:nth-child(even) {
+    background: #f8fafc;
+  }
+  .text-center { text-align: center; }
+  .text-right { text-align: right; }
+  .item-desc-sub {
+    font-size: 7pt;
+    color: #64748b;
+    margin-top: 0.5mm;
+  }
+
+  /* ── TOTALS SECTION ── */
+  .totals-wrap {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 4mm;
+  }
+  .totals-table {
+    width: 70mm;
+    border-collapse: collapse;
+    font-size: 8pt;
+  }
+  .totals-table td {
+    padding: 1.5mm 2mm;
+    border-bottom: 0.5px solid #e2e8f0;
+  }
+  .totals-table tr.grand-total {
+    background: #071828;
+    color: #fff;
+    font-size: 9pt;
+    font-weight: 900;
+  }
+  .totals-table tr.grand-total td {
+    color: #C9A84C;
+    border: none;
+    padding: 2mm;
+  }
+
+  /* ── BANKING DETAILS ── */
+  .terms-section {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 1.5mm;
+    padding: 3mm 4mm;
+    margin-bottom: 4mm;
+    font-size: 7.5pt;
+  }
+  .terms-title {
+    font-size: 7.5pt;
+    font-weight: 800;
+    color: #071828;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 1.5mm;
+  }
+  .bank-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2mm 6mm;
+    color: #334155;
+  }
+  .bank-row {
+    display: flex;
+  }
+  .bank-lbl {
+    width: 28mm;
+    font-weight: 700;
+    color: #64748b;
+  }
+  .bank-val {
+    font-weight: 800;
+    color: #071828;
+  }
+
+  /* ── SIGNATURE FOOTER ── */
+  .sig-section {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 3mm;
+    border-top: 0.5px solid #cbd5e1;
+    font-size: 7.5pt;
+  }
+  .sig-box {
+    width: 60mm;
+  }
+  .sig-line {
+    border-bottom: 1px dashed #94a3b8;
+    height: 10mm;
+    margin-bottom: 1.5mm;
+  }
+  .sig-title {
+    font-weight: 800;
+    color: #071828;
+  }
+  .sig-sub {
+    color: #64748b;
+  }
+
+  /* ── FOOTER BAR ── */
+  .doc-footer {
+    text-align: center;
+    font-size: 7pt;
+    font-weight: 700;
+    color: #94a3b8;
+    border-top: 1px solid #e2e8f0;
+    padding-top: 2mm;
+    margin-top: 3mm;
+  }
+</style>
+</head>
+<body>
+
+<div class="doc-container">
+  <div>
+    <!-- Letterhead -->
+    <div class="letterhead">
+      <div class="lh-left">
+        <img src="assets/prilok-logo.jpg" alt="PRILOK" class="lh-logo">
+        <div>
+          <div class="lh-brand-name"><span>PRILOK</span> BUILDING MATERIALS</div>
+          <div class="lh-brand-sub">Trading L.L.C. &bull; Dubai, United Arab Emirates</div>
+          <div class="lh-brand-lic">COMMERCIAL LICENSE: 1530948 &bull; TRN: 100XXXXXXXX0003</div>
+        </div>
+      </div>
+      <div class="lh-right">
+        <div><strong>Accounts Desk:</strong> priya@prilok.com</div>
+        <div><strong>Hotline / WhatsApp:</strong> +971 56 567 0169</div>
+        <div><strong>Office Tel:</strong> +971 4 3444603</div>
+        <div><strong>Web:</strong> www.prilok.com</div>
+      </div>
+    </div>
+
+    <!-- Title Bar -->
+    <div class="doc-title-bar">
+      <span class="doc-title-text">OFFICIAL TAX INVOICE</span>
+      <span class="doc-title-meta">INVOICE NO: PRK-INV-2026-0519 &bull; DATE: AUGUST 2026</span>
+    </div>
+
+    <!-- Meta Information -->
+    <div class="meta-grid">
+      <div class="meta-col">
+        <h4>Billed To (Customer Details)</h4>
+        <div class="meta-row"><span class="meta-label">Customer:</span><span class="meta-val">Contractor / Developer LLC</span></div>
+        <div class="meta-row"><span class="meta-label">Customer TRN:</span><span class="meta-val">100XXXXXXXX0003</span></div>
+        <div class="meta-row"><span class="meta-label">Site Address:</span><span class="meta-val">Dubai Investment Park / Business Bay, UAE</span></div>
+      </div>
+      <div class="meta-col">
+        <h4>Invoice &amp; Dispatch Reference</h4>
+        <div class="meta-row"><span class="meta-label">Customer LPO:</span><span class="meta-val">LPO-2026-8812</span></div>
+        <div class="meta-row"><span class="meta-label">Delivery Note:</span><span class="meta-val">DN-PRK-2026-4401</span></div>
+        <div class="meta-row"><span class="meta-label">Payment Terms:</span><span class="meta-val">30 Days Net</span></div>
+      </div>
+    </div>
+
+    <!-- Items Table -->
+    <table class="items-table">
+      <thead>
+        <tr>
+          <th style="width: 8mm;" class="text-center">#</th>
+          <th>Item Description &amp; Scope</th>
+          <th style="width: 25mm;">Brand / Spec</th>
+          <th style="width: 14mm;" class="text-center">Unit</th>
+          <th style="width: 14mm;" class="text-center">Qty</th>
+          <th style="width: 20mm;" class="text-right">Unit Price (AED)</th>
+          <th style="width: 24mm;" class="text-right">Amount (AED)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="text-center">1</td>
+          <td>
+            <strong>High-Grade Steel Rebar Grade 60 (16mm)</strong>
+            <div class="item-desc-sub">BS 4449 Grade B500B / ASTM A615 &bull; 12m Standard Lengths</div>
+          </td>
+          <td>Emirates Steel</td>
+          <td class="text-center">Tons</td>
+          <td class="text-center">15.0</td>
+          <td class="text-right">2,450.00</td>
+          <td class="text-right">36,750.00</td>
+        </tr>
+        <tr>
+          <td class="text-center">2</td>
+          <td>
+            <strong>HDPE Pressure Pipes PE100 PN16 (110mm)</strong>
+            <div class="item-desc-sub">ISO 4427 / EN 12201 with Blue Potable Water Co-extruded Stripe</div>
+          </td>
+          <td>Hepworth / Wavin</td>
+          <td class="text-center">Mtrs</td>
+          <td class="text-center">240</td>
+          <td class="text-right">34.00</td>
+          <td class="text-right">8,160.00</td>
+        </tr>
+        <tr>
+          <td class="text-center">3</td>
+          <td>
+            <strong>UL/FM OS&amp;Y Fire Gate Valve (6" / DN150)</strong>
+            <div class="item-desc-sub">300 PSI Rated Flanged End with Supervisory Switch Mounting</div>
+          </td>
+          <td>Viking / Naffco</td>
+          <td class="text-center">Nos</td>
+          <td class="text-center">6</td>
+          <td class="text-right">1,250.00</td>
+          <td class="text-right">7,500.00</td>
+        </tr>
+        <tr>
+          <td class="text-center">4</td>
+          <td>
+            <strong>C2TE High-Performance Flexible Tile Adhesive</strong>
+            <div class="item-desc-sub">EN 12004 Certified Polymer-Modified Grey Adhesive &bull; 25kg Bags</div>
+          </td>
+          <td>Sika / Weber</td>
+          <td class="text-center">Bags</td>
+          <td class="text-center">100</td>
+          <td class="text-right">26.50</td>
+          <td class="text-right">2,650.00</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Totals Table -->
+    <div class="totals-wrap">
+      <table class="totals-table">
+        <tr>
+          <td class="meta-label">Subtotal (AED):</td>
+          <td class="text-right" style="font-weight: 800;">AED 55,060.00</td>
+        </tr>
+        <tr>
+          <td class="meta-label">VAT (5%):</td>
+          <td class="text-right" style="font-weight: 800;">AED 2,753.00</td>
+        </tr>
+        <tr class="grand-total">
+          <td>Total Due (AED):</td>
+          <td class="text-right">AED 57,813.00</td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- Wire Banking Transfer Details -->
+    <div class="terms-section">
+      <div class="terms-title">Official Corporate Banking / Wire Transfer Details</div>
+      <div class="bank-grid">
+        <div class="bank-row"><span class="bank-lbl">Beneficiary Name:</span><span class="bank-val">PRILOK BUILDING MATERIALS TRADING LLC</span></div>
+        <div class="bank-row"><span class="bank-lbl">Bank Name:</span><span class="bank-val">Emirates NBD Bank PJSC</span></div>
+        <div class="bank-row"><span class="bank-lbl">Account Number:</span><span class="bank-val">101-XXXXXXXX-01</span></div>
+        <div class="bank-row"><span class="bank-lbl">IBAN:</span><span class="bank-val">AE56 0260 0010 1XXXXXXXX01</span></div>
+        <div class="bank-row"><span class="bank-lbl">SWIFT Code:</span><span class="bank-val">EBILAEADXXX</span></div>
+        <div class="bank-row"><span class="bank-lbl">Currency / Branch:</span><span class="bank-val">AED &bull; Dubai Main Branch</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Signatures & Footer -->
+  <div>
+    <div class="sig-section">
+      <div class="sig-box">
+        <div class="sig-line"></div>
+        <div class="sig-title">Finance &amp; Accounts: Priya</div>
+        <div class="sig-sub">Commercial Accounts &bull; PRILOK Trading</div>
+      </div>
+      <div class="sig-box" style="text-align: right;">
+        <div class="sig-line"></div>
+        <div class="sig-title">Goods Received &amp; Verified By</div>
+        <div class="sig-sub">Site Engineer / Store In-charge Stamp</div>
+      </div>
+    </div>
+
+    <div class="doc-footer">
+      PRILOK BUILDING MATERIALS TRADING LLC &bull; P.O. Box 48512, Dubai, UAE &bull; www.prilok.com &bull; priya@prilok.com &bull; +971 56 567 0169
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

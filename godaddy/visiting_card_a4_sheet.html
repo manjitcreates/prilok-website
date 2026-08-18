@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>PRILOK Visiting Card 10-Up A4 Print Sheet - Priya</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  @page {
+    size: A4 portrait;
+    margin: 10mm 15mm;
+  }
+  
+  *, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background: #fff;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .sheet-title {
+    text-align: center;
+    font-size: 8pt;
+    font-weight: 800;
+    color: #64748b;
+    margin-bottom: 4mm;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .a4-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 85mm);
+    grid-template-rows: repeat(5, 55mm);
+    gap: 3mm 6mm;
+    justify-content: center;
+    align-content: center;
+  }
+
+  .card-page {
+    width: 85mm;
+    height: 55mm;
+    position: relative;
+    overflow: hidden;
+    background: #ffffff;
+    border: 0.5px dashed #cbd5e1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 5mm 6mm;
+  }
+
+  .front-accent-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 3.5mm;
+    background: linear-gradient(to bottom, #C9A84C 0%, #D9822B 100%);
+  }
+
+  .front-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 2mm;
+  }
+  .front-brand-left {
+    display: flex;
+    align-items: center;
+    gap: 2.5mm;
+  }
+  .brand-logo-img {
+    width: 8.5mm;
+    height: 8.5mm;
+    object-fit: contain;
+    border-radius: 1.5mm;
+    border: 0.8px solid #C9A84C;
+    padding: 0.5mm;
+    background: #fff;
+  }
+  .brand-text-block {
+    display: flex;
+    flex-direction: column;
+  }
+  .brand-main-title {
+    font-size: 3.8mm;
+    font-weight: 900;
+    letter-spacing: 0.5px;
+    line-height: 1;
+    color: #071828;
+  }
+  .brand-main-title span {
+    color: #D9822B;
+  }
+  .brand-sub-title {
+    font-size: 1.5mm;
+    font-weight: 800;
+    letter-spacing: 0.3px;
+    color: #5c7a96;
+    margin-top: 0.3mm;
+    text-transform: uppercase;
+  }
+  .license-badge {
+    font-size: 1.4mm;
+    font-weight: 800;
+    color: #071828;
+    background: #f1f5f9;
+    border: 0.5px solid #cbd5e1;
+    padding: 0.6mm 1.6mm;
+    border-radius: 1mm;
+  }
+
+  .front-middle {
+    padding-left: 2mm;
+    margin: auto 0;
+  }
+  .exec-name {
+    font-size: 4.6mm;
+    font-weight: 900;
+    color: #071828;
+    line-height: 1.1;
+  }
+  .exec-title {
+    font-size: 2.1mm;
+    font-weight: 700;
+    color: #D9822B;
+    margin-top: 0.4mm;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+  }
+  .exec-divider {
+    width: 22mm;
+    height: 0.5mm;
+    background: #C9A84C;
+    margin-top: 1mm;
+  }
+
+  .front-footer {
+    padding-left: 2mm;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1mm 2mm;
+    border-top: 0.5px solid #e2e8f0;
+    padding-top: 1.8mm;
+  }
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 1.2mm;
+    font-size: 1.8mm;
+    color: #1e293b;
+    font-weight: 600;
+  }
+  .contact-icon {
+    font-size: 1.8mm;
+    color: #C9A84C;
+    font-weight: 800;
+    width: 2.2mm;
+    text-align: center;
+  }
+  .contact-val-bold {
+    font-weight: 800;
+    color: #071828;
+  }
+</style>
+</head>
+<body>
+
+<div class="sheet-title">
+  PRILOK BUILDING MATERIALS TRADING LLC &bull; 10-Card Print Sheet (Standard 85mm &times; 55mm) &bull; Crop Along Borders
+</div>
+
+<div class="a4-grid">
+  <!-- 10 Priya Cards on A4 -->
+  <!-- Card 1 -->
+  <div class="card-page">
+    <div class="front-accent-bar"></div>
+    <div class="front-header">
+      <div class="front-brand-left">
+        <img src="assets/prilok-logo.jpg" alt="PRILOK" class="brand-logo-img">
+        <div class="brand-text-block">
+          <div class="brand-main-title"><span>PRILOK</span> TRADING</div>
+          <div class="brand-sub-title">Building Materials Trading L.L.C.</div>
+        </div>
+      </div>
+      <div class="license-badge">LIC: 1530948 &bull; DUBAI</div>
+    </div>
+    <div class="front-middle">
+      <div class="exec-name">Priya</div>
+      <div class="exec-title">Head of Commercial Sales</div>
+      <div class="exec-divider"></div>
+    </div>
+    <div class="front-footer">
+      <div class="contact-item"><span class="contact-icon">📞</span><span>Tel: +971 4 3444603</span></div>
+      <div class="contact-item"><span class="contact-icon">📱</span><span class="contact-val-bold">+971 56 567 0169</span></div>
+      <div class="contact-item"><span class="contact-icon">✉️</span><span>priya@prilok.com</span></div>
+      <div class="contact-item"><span class="contact-icon">🌐</span><span class="contact-val-bold">www.prilok.com</span></div>
+      <div class="contact-item" style="grid-column: span 2;"><span class="contact-icon">📍</span><span>P.O. Box 48512, Dubai, UAE</span></div>
+    </div>
+  </div>
+
+  <!-- Card 2 -->
+  <div class="card-page">
+    <div class="front-accent-bar"></div>
+    <div class="front-header">
+      <div class="front-brand-left">
+        <img src="assets/prilok-logo.jpg" alt="PRILOK" class="brand-logo-img">
+        <div class="brand-text-block">
+          <div class="brand-main-title"><span>PRILOK</span> TRADING</div>
+          <div class="brand-sub-title">Building Materials Trading L.L.C.</div>
+        </div>
+      </div>
+      <div class="license-badge">LIC: 1530948 &bull; DUBAI</div>
+    </div>
+    <div class="front-middle">
+      <div class="exec-name">Priya</div>
+      <div class="exec-title">Head of Commercial Sales</div>
+      <div class="exec-divider"></div>
+    </div>
+    <div class="front-footer">
+      <div class="contact-item"><span class="contact-icon">📞</span><span>Tel: +971 4 3444603</span></div>
+      <div class="contact-item"><span class="contact-icon">📱</span><span class="contact-val-bold">+971 56 567 0169</span></div>
+      <div class="contact-item"><span class="contact-icon">✉️</span><span>priya@prilok.com</span></div>
+      <div class="contact-item"><span class="contact-icon">🌐</span><span class="contact-val-bold">www.prilok.com</span></div>
+      <div class="contact-item" style="grid-column: span 2;"><span class="contact-icon">📍</span><span>P.O. Box 48512, Dubai, UAE</span></div>
+    </div>
+  </div>
+
+  <!-- Card 3 -->
+  <div class="card-page">
+    <div class="front-accent-bar"></div>
+    <div class="front-header">
+      <div class="front-brand-left">
+        <img src="assets/prilok-logo.jpg" alt="PRILOK" class="brand-logo-img">
+        <div class="brand-text-block">
+          <div class="brand-main-title"><span>PRILOK</span> TRADING</div>
+          <div class="brand-sub-title">Building Materials Trading L.L.C.</div>
+        </div>
+      </div>
+      <div class="license-badge">LIC: 1530948 &bull; DUBAI</div>
+    </div>
+    <div class="front-middle">
+      <div class="exec-name">Priya</div>
+      <div class="exec-title">Head of Commercial Sales</div>
+      <div class="exec-divider"></div>
+    </div>
+    <div class="front-footer">
+      <div class="contact-item"><span class="contact-icon">📞</span><span>Tel: +971 4 3444603</span></div>
+      <div class="contact-item"><span class="contact-icon">📱</span><span class="contact-val-bold">+971 56 567 0169</span></div>
+      <div class="contact-item"><span class="contact-icon">✉️</span><span>priya@prilok.com</span></div>
+      <div class="contact-item"><span class="contact-icon">🌐</span><span class="contact-val-bold">www.prilok.com</span></div>
+      <div class="contact-item" style="grid-column: span 2;"><span class="contact-icon">📍</span><span>P.O. Box 48512, Dubai, UAE</span></div>
+    </div>
+  </div>
+
+  <!-- Card 4 -->
+  <div class="card-page">
+    <div class="front-accent-bar"></div>
+    <div class="front-header">
+      <div class="front-brand-left">
+        <img src="assets/prilok-logo.jpg" alt="PRILOK" class="brand-logo-img">
+        <div class="brand-text-block">
+          <div class="brand-main-title"><span>PRILOK</span> TRADING</div>
+          <div class="brand-sub-title">Building Materials Trading L.L.C.</div>
+        </div>
+      </div>
+      <div class="license-badge">LIC: 1530948 &bull; DUBAI</div>
+    </div>
+    <div class="front-middle">
+      <div class="exec-name">Priya</div>
+      <div class="exec-title">Head of Commercial Sales</div>
+      <div class="exec-divider"></div>
+    </div>
+    <div class="front-footer">
+      <div class="contact-item"><span class="contact-icon">📞</span><span>Tel: +971 4 3444603</span></div>
+      <div class="contact-item"><span class="contact-icon">📱</span><span class="contact-val-bold">+971 56 567 0169</span></div>
+      <div class="contact-item"><span class="contact-icon">✉️</span><span>priya@prilok.com</span></div>
+      <div class="contact-item"><span class="contact-icon">🌐</span><span class="contact-val-bold">www.prilok.com</span></div>
+      <div class="contact-item" style="grid-column: span 2;"><span class="contact-icon">📍</span><span>P.O. Box 48512, Dubai, UAE</span></div>
+    </div>
+  </div>
+
+  <!-- Card 5 -->
+  <div class="card-page">
+    <div class="front-accent-bar"></div>
+    <div class="front-header">
+      <div class="front-brand-left">
+        <img src="assets/prilok-logo.jpg" alt="PRILOK" class="brand-logo-img">
+        <div class="brand-text-block">
+          <div class="brand-main-title"><span>PRILOK</span> TRADING</div>
+          <div class="brand-sub-title">Building Materials Trading L.L.C.</div>
+        </div>
+      </div>
+      <div class="license-badge">LIC: 1530948 &bull; DUBAI</div>
+    </div>
+    <div class="front-middle">
+      <div class="exec-name">Priya</div>
+      <div class="exec-title">Head of Commercial Sales</div>
+      <div class="exec-divider"></div>
+    </div>
+    <div class="front-footer">
+      <div class="contact-item"><span class="contact-icon">📞</span><span>Tel: +971 4 3444603</span></div>
+      <div class="contact-item"><span class="contact-icon">📱</span><span class="contact-val-bold">+971 56 567 0169</span></div>
+      <div class="contact-item"><span class="contact-icon">✉️</span><span>priya@prilok.com</span></div>
+      <div class="contact-item"><span class="contact-icon">🌐</span><span class="contact-val-bold">www.prilok.com</span></div>
+      <div class="contact-item" style="grid-column: span 2;"><span class="contact-icon">📍</span><span>P.O. Box 48512, Dubai, UAE</span></div>
+    </div>
+  </div>
+
+  <!-- Card 6 -->
+  <div class="card-page">
+    <div class="front-accent-bar"></div>
+    <div class="front-header">
+      <div class="front-brand-left">
+        <img src="assets/prilok-logo.jpg" alt="PRILOK" class="brand-logo-img">
+        <div class="brand-text-block">
+          <div class="brand-main-title"><span>PRILOK</span> TRADING</div>
+          <div class="brand-sub-title">Building Materials Trading L.L.C.</div>
+        </div>
+      </div>
+      <div class="license-badge">LIC: 1530948 &bull; DUBAI</div>
+    </div>
+    <div class="front-middle">
+      <div class="exec-name">Priya</div>
+      <div class="exec-title">Head of Commercial Sales</div>
+      <div class="exec-divider"></div>
+    </div>
+    <div class="front-footer">
+      <div class="contact-item"><span class="contact-icon">📞</span><span>Tel: +971 4 3444603</span></div>
+      <div class="contact-item"><span class="contact-icon">📱</span><span class="contact-val-bold">+971 56 567 0169</span></div>
+      <div class="contact-item"><span class="contact-icon">✉️</span><span>priya@prilok.com</span></div>
+      <div class="contact-item"><span class="contact-icon">🌐</span><span class="contact-val-bold">www.prilok.com</span></div>
+      <div class="contact-item" style="grid-column: span 2;"><span class="contact-icon">📍</span><span>P.O. Box 48512, Dubai, UAE</span></div>
+    </div>
+  </div>
+
+  <!-- Card 7 -->
+  <div class="card-page">
+    <div class="front-accent-bar"></div>
+    <div class="front-header">
+      <div class="front-brand-left">
+        <img src="assets/prilok-logo.jpg" alt="PRILOK" class="brand-logo-img">
+        <div class="brand-text-block">
+          <div class="brand-main-title"><span>PRILOK</span> TRADING</div>
+          <div class="brand-sub-title">Building Materials Trading L.L.C.</div>
+        </div>
+      </div>
+      <div class="license-badge">LIC: 1530948 &bull; DUBAI</div>
+    </div>
+    <div class="front-middle">
+      <div class="exec-name">Priya</div>
+      <div class="exec-title">Head of Commercial Sales</div>
+      <div class="exec-divider"></div>
+    </div>
+    <div class="front-footer">
+      <div class="contact-item"><span class="contact-icon">📞</span><span>Tel: +971 4 3444603</span></div>
+      <div class="contact-item"><span class="contact-icon">📱</span><span class="contact-val-bold">+971 56 567 0169</span></div>
+      <div class="contact-item"><span class="contact-icon">✉️</span><span>priya@prilok.com</span></div>
+      <div class="contact-item"><span class="contact-icon">🌐</span><span class="contact-val-bold">www.prilok.com</span></div>
+      <div class="contact-item" style="grid-column: span 2;"><span class="contact-icon">📍</span><span>P.O. Box 48512, Dubai, UAE</span></div>
+    </div>
+  </div>
+
+  <!-- Card 8 -->
+  <div class="card-page">
+    <div class="front-accent-bar"></div>
+    <div class="front-header">
+      <div class="front-brand-left">
+        <img src="assets/prilok-logo.jpg" alt="PRILOK" class="brand-logo-img">
+        <div class="brand-text-block">
+          <div class="brand-main-title"><span>PRILOK</span> TRADING</div>
+          <div class="brand-sub-title">Building Materials Trading L.L.C.</div>
+        </div>
+      </div>
+      <div class="license-badge">LIC: 1530948 &bull; DUBAI</div>
+    </div>
+    <div class="front-middle">
+      <div class="exec-name">Priya</div>
+      <div class="exec-title">Head of Commercial Sales</div>
+      <div class="exec-divider"></div>
+    </div>
+    <div class="front-footer">
+      <div class="contact-item"><span class="contact-icon">📞</span><span>Tel: +971 4 3444603</span></div>
+      <div class="contact-item"><span class="contact-icon">📱</span><span class="contact-val-bold">+971 56 567 0169</span></div>
+      <div class="contact-item"><span class="contact-icon">✉️</span><span>priya@prilok.com</span></div>
+      <div class="contact-item"><span class="contact-icon">🌐</span><span class="contact-val-bold">www.prilok.com</span></div>
+      <div class="contact-item" style="grid-column: span 2;"><span class="contact-icon">📍</span><span>P.O. Box 48512, Dubai, UAE</span></div>
+    </div>
+  </div>
+
+  <!-- Card 9 -->
+  <div class="card-page">
+    <div class="front-accent-bar"></div>
+    <div class="front-header">
+      <div class="front-brand-left">
+        <img src="assets/prilok-logo.jpg" alt="PRILOK" class="brand-logo-img">
+        <div class="brand-text-block">
+          <div class="brand-main-title"><span>PRILOK</span> TRADING</div>
+          <div class="brand-sub-title">Building Materials Trading L.L.C.</div>
+        </div>
+      </div>
+      <div class="license-badge">LIC: 1530948 &bull; DUBAI</div>
+    </div>
+    <div class="front-middle">
+      <div class="exec-name">Priya</div>
+      <div class="exec-title">Head of Commercial Sales</div>
+      <div class="exec-divider"></div>
+    </div>
+    <div class="front-footer">
+      <div class="contact-item"><span class="contact-icon">📞</span><span>Tel: +971 4 3444603</span></div>
+      <div class="contact-item"><span class="contact-icon">📱</span><span class="contact-val-bold">+971 56 567 0169</span></div>
+      <div class="contact-item"><span class="contact-icon">✉️</span><span>priya@prilok.com</span></div>
+      <div class="contact-item"><span class="contact-icon">🌐</span><span class="contact-val-bold">www.prilok.com</span></div>
+      <div class="contact-item" style="grid-column: span 2;"><span class="contact-icon">📍</span><span>P.O. Box 48512, Dubai, UAE</span></div>
+    </div>
+  </div>
+
+  <!-- Card 10 -->
+  <div class="card-page">
+    <div class="front-accent-bar"></div>
+    <div class="front-header">
+      <div class="front-brand-left">
+        <img src="assets/prilok-logo.jpg" alt="PRILOK" class="brand-logo-img">
+        <div class="brand-text-block">
+          <div class="brand-main-title"><span>PRILOK</span> TRADING</div>
+          <div class="brand-sub-title">Building Materials Trading L.L.C.</div>
+        </div>
+      </div>
+      <div class="license-badge">LIC: 1530948 &bull; DUBAI</div>
+    </div>
+    <div class="front-middle">
+      <div class="exec-name">Priya</div>
+      <div class="exec-title">Head of Commercial Sales</div>
+      <div class="exec-divider"></div>
+    </div>
+    <div class="front-footer">
+      <div class="contact-item"><span class="contact-icon">📞</span><span>Tel: +971 4 3444603</span></div>
+      <div class="contact-item"><span class="contact-icon">📱</span><span class="contact-val-bold">+971 56 567 0169</span></div>
+      <div class="contact-item"><span class="contact-icon">✉️</span><span>priya@prilok.com</span></div>
+      <div class="contact-item"><span class="contact-icon">🌐</span><span class="contact-val-bold">www.prilok.com</span></div>
+      <div class="contact-item" style="grid-column: span 2;"><span class="contact-icon">📍</span><span>P.O. Box 48512, Dubai, UAE</span></div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

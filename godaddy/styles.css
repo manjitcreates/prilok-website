@@ -1,0 +1,220 @@
+/* PRILOK Website - Extracted & Optimized Styles */
+/* Combined from index.html inline <style> blocks */
+
+html, body {
+    overflow-x: hidden !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    position: relative;
+}
+* {
+    box-sizing: border-box;
+}
+::-webkit-scrollbar {
+    width: 6px;
+}
+::-webkit-scrollbar-track {
+    background: #F8FAFC;
+}
+::-webkit-scrollbar-thumb {
+    background: #CBD5E1;
+    border-radius: 4px;
+}
+.hero-pattern {
+    background-color: #0A2540;
+    background-image: radial-gradient(#1D68A6 0.75px, transparent 0.75px), radial-gradient(#1D68A6 0.75px, #0A2540 0.75px);
+    background-size: 30px 30px;
+    background-position: 0 0, 15px 15px;
+}
+.btn-click-effect {
+    position: relative;
+    overflow: hidden;
+}
+.ripple-wave {
+    position: absolute;
+    border-radius: 50%;
+    transform: scale(0);
+    animation: ripple-anim 0.5s ease-out;
+    background: rgba(255, 255, 255, 0.4);
+    pointer-events: none;
+}
+@keyframes ripple-anim {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+.catalog-refreshing {
+    opacity: 1;
+}
+.catalog-refreshed {
+    opacity: 1;
+}
+/* SMOOTH CATALOG CARD TRANSITION */
+@keyframes catalogFadeIn {
+    from {
+        opacity: 0.2;
+        transform: translateY(4px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.catalog-card-anim {
+    animation: catalogFadeIn 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+}
+@media (max-width: 639px) {
+    body {
+        padding-bottom: 95px !important;
+    }
+}
+
+/* TOP PROGRESS BAR */
+#top-progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    width: 0%;
+    z-index: 9999;
+    background: linear-gradient(90deg, #F59E0B 0%, #D9822B 50%, #F59E0B 100%);
+    box-shadow: 0 0 10px rgba(245,158,11,0.7), 0 0 20px rgba(217,130,43,0.4);
+    transition: width 0.25s ease-out, opacity 0.3s ease;
+    border-radius: 0 2px 2px 0;
+    pointer-events: none;
+}
+#top-progress-bar.done {
+    width: 100% !important;
+    opacity: 0;
+    transition: width 0.15s ease-out, opacity 0.4s ease 0.15s;
+}
+#top-progress-bar .progress-glow {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 80px;
+    height: 100%;
+    background: radial-gradient(ellipse at right, rgba(255,220,100,0.9) 0%, transparent 70%);
+}
+
+/* COMPACT VIEW FLOATING BUTTON (Desktop Only) */
+#compact-view-btn {
+    display: none;
+}
+@media (min-width: 1024px) {
+    #compact-view-btn {
+        display: block;
+        position: fixed;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%) translateX(-100%);
+        z-index: 50;
+        transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.3s ease;
+        cursor: pointer;
+    }
+    #compact-view-btn.visible {
+        transform: translateY(-50%) translateX(0);
+    }
+    #compact-view-btn.peeking {
+        transform: translateY(-50%) translateX(calc(-100% + 10px));
+        opacity: 0.55;
+        transition: transform 0.5s ease-in-out, opacity 0.5s ease;
+    }
+    #compact-view-btn.peeking:hover {
+        transform: translateY(-50%) translateX(0);
+        opacity: 1;
+    }
+}    transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.2s ease;
+}
+
+/* HERO IMAGE CAROUSEL */
+.hero-carousel-wrapper {
+    mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+}
+.hero-carousel-track {
+    animation: heroScroll 75s linear infinite;
+}
+.hero-carousel-track:hover {
+    animation-play-state: paused;
+}
+@keyframes heroScroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(calc(-50% - 10px)); }
+}
+
+/* BRAND ANIMATED MARQUEE TICKER */
+@keyframes brandMarquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-33.3333%); }
+}
+.brand-marquee-track {
+    display: flex !important;
+    width: max-content !important;
+    animation: brandMarquee 95s linear infinite !important;
+}
+.brand-marquee-track:hover {
+    animation-play-state: paused !important;
+}
+
+/* TAILWIND CUSTOM BRAND FALLBACKS & CONTRAST FIXES */
+.bg-brand-navy,
+button.bg-brand-navy,
+div.bg-brand-navy,
+a.bg-brand-navy {
+    background-color: #0A2540 !important;
+    color: #ffffff !important;
+}
+.bg-brand-navyLight {
+    background-color: #11355A !important;
+}
+.text-brand-navy {
+    color: #0A2540 !important;
+}
+.bg-slate-900 {
+    background-color: #0F172A !important;
+}
+.bg-slate-800 {
+    background-color: #1E293B !important;
+}
+.bg-slate-950 {
+    background-color: #020617 !important;
+}
+.bg-navy-950 {
+    background-color: #0A2540 !important;
+}
+.bg-blue-950 {
+    background-color: #082F49 !important;
+}
+
+/* CATALOG HEADER GRADIENT PANEL FALLBACK */
+.bg-gradient-to-r.from-brand-navy,
+div[class*="from-brand-navy"] {
+    background: linear-gradient(135deg, #0A2540 0%, #11355A 50%, #0F172A 100%) !important;
+    color: #ffffff !important;
+}
+
+/* SIDEBAR CATEGORY CHIP CONTRAST FIX */
+.chip-btn.bg-brand-navy {
+    background-color: #0A2540 !important;
+    color: #ffffff !important;
+    border-color: #0A2540 !important;
+}
+.chip-btn.bg-slate-50 {
+    background-color: #F8FAFC !important;
+    color: #334155 !important;
+}
+.chip-btn.bg-white {
+    background-color: #FFFFFF !important;
+    color: #334155 !important;
+}

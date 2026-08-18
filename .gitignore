@@ -1,0 +1,18 @@
+# Executables & Binaries
+*.exe
+cloudflared.exe
+ngrok.exe
+
+# Unwanted & Duplicate Archive Directory
+unwanted/
+
+# OS metadata & temporary files
+Thumbs.db
+Desktop.ini
+.DS_Store
+*.tmp
+*.log
+
+# IDE & Editor settings
+.vscode/
+.idea/

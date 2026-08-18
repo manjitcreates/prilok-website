@@ -1,0 +1,88 @@
+# =====================================================
+# PRILOK BUILDING MATERIALS - GoDaddy Apache .htaccess
+# =====================================================
+
+# ---- 1. FORCE HTTPS ----
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# ---- 2. FORCE WWW (canonical domain) ----
+RewriteCond %{HTTP_HOST} !^www\. [NC]
+RewriteRule ^(.*)$ https://www.%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# ---- 3. REMOVE TRAILING SLASH ----
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)/$ /$1 [L,R=301]
+
+# ---- 4. CUSTOM ERROR PAGES ----
+ErrorDocument 404 /index.html
+
+# ---- 5. MIME TYPES ----
+AddType application/javascript .js
+AddType text/css .css
+AddType image/svg+xml .svg
+AddType image/webp .webp
+AddType font/woff .woff
+AddType font/woff2 .woff2
+AddType application/manifest+json .webmanifest
+
+# ---- 6. GZIP COMPRESSION ----
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html
+    AddOutputFilterByType DEFLATE text/css
+    AddOutputFilterByType DEFLATE application/javascript
+    AddOutputFilterByType DEFLATE application/json
+    AddOutputFilterByType DEFLATE image/svg+xml
+    AddOutputFilterByType DEFLATE text/xml
+    AddOutputFilterByType DEFLATE text/plain
+</IfModule>
+
+# ---- 7. BROWSER CACHING ----
+<IfModule mod_expires.c>
+    ExpiresActive On
+    # Images - cache 1 month
+    ExpiresByType image/jpg "access plus 1 month"
+    ExpiresByType image/jpeg "access plus 1 month"
+    ExpiresByType image/png "access plus 1 month"
+    ExpiresByType image/gif "access plus 1 month"
+    ExpiresByType image/webp "access plus 1 month"
+    ExpiresByType image/svg+xml "access plus 1 month"
+    ExpiresByType image/x-icon "access plus 1 year"
+    # CSS & JS - cache 1 week
+    ExpiresByType text/css "access plus 1 week"
+    ExpiresByType application/javascript "access plus 1 week"
+    # HTML - no cache (always fresh)
+    ExpiresByType text/html "access plus 0 seconds"
+</IfModule>
+
+# ---- 8. SECURITY HEADERS ----
+<IfModule mod_headers.c>
+    # Prevent clickjacking
+    Header always set X-Frame-Options "SAMEORIGIN"
+    # XSS protection
+    Header always set X-XSS-Protection "1; mode=block"
+    # Prevent MIME sniffing
+    Header always set X-Content-Type-Options "nosniff"
+    # Referrer policy
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    # Remove server fingerprinting
+    Header unset X-Powered-By
+    Header unset Server
+</IfModule>
+
+# ---- 9. DISABLE DIRECTORY LISTING ----
+Options -Indexes
+
+# ---- 10. BLOCK SENSITIVE FILES ----
+<FilesMatch "\.(py|log|md|bat|ps1|json|csv|txt|docx|pptx|pdf|exe|sh|sql)$">
+    Require all denied
+</FilesMatch>
+
+# Allow specific files that need to be public
+<Files "robots.txt">
+    Require all granted
+</Files>
+<Files "sitemap.xml">
+    Require all granted
+</Files>
