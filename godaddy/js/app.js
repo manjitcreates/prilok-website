@@ -496,7 +496,7 @@ document.addEventListener('DOMContentLoaded', () => {
             doc.setFont('helvetica', 'italic');
             doc.setFontSize(9);
             doc.text('* Official itemized pricing with 5% UAE VAT will be dispatched within 4 hours by PRILOK sales team.', 14, currentY);
-            doc.text('Contact hotline: +971 4 800-PRILOK | Email: sales@priloktrading.ae', 14, currentY + 6);
+            doc.text('Contact hotline: +971 56 567 0169 | Email: sales@prilok.ae', 14, currentY + 6);
 
             doc.save(`PRILOK_RFQ_Quote_${companyName.replace(/\s+/g, '_')}.pdf`);
         });
