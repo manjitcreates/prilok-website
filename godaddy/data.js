@@ -3574,6 +3574,19 @@ window.PRILOK_DATA = {
                 "desc": "Preferred volume pricing frameworks tailored for tenders."
         }
 ]
+,
+    contact: {
+        phone: "+971 56 567 0169",
+        whatsapp: "+971 56 567 0169",
+        whatsappLink: "https://wa.me/971565670169",
+        email: "priya@prilok.com",
+        salesEmail: "sales@prilok.ae",
+        location: "Dubai, United Arab Emirates",
+        timing: "Monday – Saturday: 8:00 AM – 8:00 PM (GST)",
+        officeHours: "Monday to Saturday, 8:00 AM to 8:00 PM",
+        workingDays: "Monday – Saturday",
+        workingHours: "8:00 AM – 8:00 PM"
+    }
 };
 
 if (typeof module !== 'undefined' && module.exports) {

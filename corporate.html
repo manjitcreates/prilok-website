@@ -233,6 +233,33 @@
         })();
     </script>
 
+        <!-- TOP UTILITY & TIMINGS BAR -->
+    <div class="bg-[#051320] text-slate-300 border-b border-white/10 text-[11px] sm:text-xs py-1.5 px-3 sm:px-8 lg:px-12">
+        <div class="w-full mx-auto flex items-center justify-between gap-2">
+            <div class="flex items-center gap-3 sm:gap-5 overflow-hidden">
+                <span class="flex items-center gap-1.5 text-amber-300 font-bold whitespace-nowrap">
+                    <i data-lucide="clock" class="w-3.5 h-3.5 text-amber-400 shrink-0"></i>
+                    <span>Mon – Sat: 8:00 AM – 8:00 PM</span>
+                    <span class="text-slate-400 font-medium text-[10px] hidden sm:inline">(GST)</span>
+                </span>
+                <span class="hidden md:flex items-center gap-1.5 text-slate-300 whitespace-nowrap">
+                    <i data-lucide="map-pin" class="w-3.5 h-3.5 text-amber-400 shrink-0"></i>
+                    <span>Dubai & Northern Emirates, UAE</span>
+                </span>
+            </div>
+            <div class="flex items-center gap-3 sm:gap-4 shrink-0 text-[11px] sm:text-xs font-semibold">
+                <a href="tel:+971565670169" class="flex items-center gap-1 text-slate-200 hover:text-amber-400 transition-colors">
+                    <i data-lucide="phone" class="w-3 h-3 text-emerald-400 shrink-0"></i>
+                    <span>+971 56 567 0169</span>
+                </a>
+                <a href="mailto:priya@prilok.com" class="hidden sm:flex items-center gap-1 text-slate-300 hover:text-white transition-colors">
+                    <i data-lucide="mail" class="w-3 h-3 text-blue-300 shrink-0"></i>
+                    <span>priya@prilok.com</span>
+                </a>
+            </div>
+        </div>
+    </div>
+
     <!-- CORPORATE HEADER BAR -->
     <header class="sticky top-0 z-40" style="background: linear-gradient(135deg, #0A2540 0%, #11355A 40%, #0A2540 100%); border-bottom: 2px solid rgba(245,158,11,0.4); box-shadow: 0 4px 24px rgba(0,0,0,0.35);">
 
@@ -339,6 +366,13 @@
             </div>
 
             <div class="space-y-3 pt-6 border-t border-slate-800 mt-6">
+                <div class="p-3 rounded-xl bg-white/5 border border-white/10 text-center space-y-1">
+                    <div class="text-amber-400 font-bold text-xs flex items-center justify-center gap-1.5">
+                        <i data-lucide="clock" class="w-3.5 h-3.5 text-amber-400"></i>
+                        <span>Mon – Sat: 8:00 AM – 8:00 PM</span>
+                    </div>
+                    <div class="text-slate-400 text-[10px]">Office & Supply Desk Hours (GST)</div>
+                </div>
                 <a href="#contact" class="mobile-nav-link w-full py-3 rounded-xl bg-brand-accent hover:bg-amber-600 text-white font-bold text-xs flex items-center justify-center space-x-2 shadow-md">
                     <i data-lucide="file-text" class="w-4 h-4"></i>
                     <span>Submit BOQ Tender</span>
@@ -515,6 +549,14 @@
 
                     <div class="space-y-3 text-xs">
                         <div class="flex items-start space-x-3 p-3.5 rounded-xl bg-white/10 border border-white/15">
+                            <i data-lucide="clock" class="w-5 h-5 text-amber-400 shrink-0 mt-0.5"></i>
+                            <div>
+                                <div class="font-bold text-white">Office & Supply Desk Hours</div>
+                                <div class="text-amber-300 font-extrabold mt-0.5 text-sm">Monday – Saturday: 8:00 AM – 8:00 PM <span class="text-slate-300 font-normal text-xs">(GST)</span></div>
+                                <div class="text-slate-400 mt-0.5">Sunday: Closed (24/7 WhatsApp Tender Support)</div>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3 p-3.5 rounded-xl bg-white/10 border border-white/15"
                             <i data-lucide="map-pin" class="w-5 h-5 text-amber-400 shrink-0 mt-0.5"></i>
                             <div>
                                 <div class="font-bold text-white">Corporate Hub & Central Warehouse</div>
@@ -582,10 +624,16 @@
         </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer class="bg-slate-950 py-6 text-xs text-slate-400 text-center border-t border-slate-800">
-        <div class="w-full px-4 sm:px-6 lg:px-8 sm:px-8 lg:px-12 flex flex-col sm:flex-row items-center justify-between gap-2">
-            <div>© 2026 PRILOK BUILDING MATERIALS TRADING LLC. All rights reserved. Registered in Dubai, UAE.</div>
+        <!-- FOOTER -->
+    <footer class="bg-slate-950 py-6 text-xs text-slate-400 border-t border-slate-800">
+        <div class="w-full px-4 sm:px-6 lg:px-8 sm:px-8 lg:px-12 flex flex-col md:flex-row items-center justify-between gap-3 text-center md:text-left">
+            <div>
+                <div>© 2026 PRILOK BUILDING MATERIALS TRADING LLC. All rights reserved. Registered in Dubai, UAE.</div>
+                <div class="text-slate-500 text-[11px] mt-1 flex items-center justify-center md:justify-start gap-1.5">
+                    <i data-lucide="clock" class="w-3.5 h-3.5 text-amber-400 inline"></i>
+                    <span>Working Hours: <strong class="text-slate-300">Monday – Saturday: 8:00 AM – 8:00 PM</strong> (GST)</span>
+                </div>
+            </div>
             <div class="text-slate-400 font-bold">Contact Desk: <a href="tel:+971565670169" class="text-amber-400 hover:underline">+971 56 567 0169</a> | <a href="mailto:priya@prilok.com" class="text-amber-400 hover:underline">priya@prilok.com</a></div>
         </div>
     </footer>
