@@ -3582,10 +3582,7 @@ window.PRILOK_DATA = {
         email: "priya@prilok.com",
         salesEmail: "sales@prilok.ae",
         location: "Dubai, United Arab Emirates",
-        timing: "Monday – Saturday: 8:00 AM – 8:00 PM (GST)",
-        officeHours: "Monday to Saturday, 8:00 AM to 8:00 PM",
-        workingDays: "Monday – Saturday",
-        workingHours: "8:00 AM – 8:00 PM"
+        hours: "Mon–Sat: 8:00 AM – 8:00 PM (GST)"
     }
 };
 
